@@ -1,0 +1,13 @@
+form {
+  width: 100%;
+  margin: auto;
+  input {
+    display: block;
+    width: 30%;
+    margin: 16px auto;
+    padding: 8px;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 16px;
+  }
+}

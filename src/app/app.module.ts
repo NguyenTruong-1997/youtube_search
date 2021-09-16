@@ -5,14 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { YtbSearchComponent } from './ytb-search/ytb-search.component';
-import { YtbResultsComponent } from './ytb-results/ytb-results.component';
+import { YtbSearchComponent } from './ytb/ytb-search/ytb-search.component';
+import { YtbResultsComponent } from './ytb/ytb-results/ytb-results.component';
+import { YtbComponent } from './ytb/ytb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    YtbComponent,
     YtbSearchComponent,
-    YtbResultsComponent
+    YtbResultsComponent,
   ],
   imports: [
     BrowserModule,

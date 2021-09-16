@@ -1,29 +1,36 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class YtbServiceService {
+export class YtbService {
+  
 
-  constructor() { }
+  constructor() {}
 
-  async getDatas(keyword: string){
-    const API_YTB_URL = 'https://www.googleapis.com/youtube/v3/search'
+  public getDatas(keyword: string): Promise<any> {
+    const API_YTB_URL = 'https://www.googleapis.com/youtube/v3/search';
     const API_KEY = 'AIzaSyCCeDwqFMVAlM-Vqi5gfG9hoJvBTrL1vuI';
     const params = [
       `q=${keyword}`,
       `key=${API_KEY}`,
       `part=snippet`,
       `type=video`,
-      `maxResults=10`
+      `maxResults=10`,
     ].join('&');
 
-    await fetch(`${API_YTB_URL}?${params}`, {
+    return fetch(`${API_YTB_URL}?${params}`, {
       method: 'GET',
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.items);
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data) {
+          return;
+        }
+
+        return data.items.map((item: any) => {
+          return item.snippet
+        });
+      });
   }
 }

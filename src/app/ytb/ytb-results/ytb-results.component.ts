@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ytb-results',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ytb-results.component.scss']
 })
 export class YtbResultsComponent implements OnInit {
+  @Input() result: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    
   }
-
 }

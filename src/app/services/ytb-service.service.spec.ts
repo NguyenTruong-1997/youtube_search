@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { YtbServiceService } from './ytb-service.service';
+import { YtbService } from './ytb-service.service';
 
 describe('YtbServiceService', () => {
-  let service: YtbServiceService;
+  let service: YtbService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(YtbServiceService);
+    service = TestBed.inject(YtbService);
   });
 
   it('should be created', () => {
